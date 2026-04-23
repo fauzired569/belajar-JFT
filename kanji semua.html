@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <title>📚 Daftar Lengkap Kanji Kosakata</title>
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5efe8;
+      font-family: 'Quicksand', 'Noto Sans JP', sans-serif;
+      padding: 24px 20px 40px;
+      color: #2c241e;
+    }
+
+    .page-wrapper {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    /* header */
+    .header {
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2rem, 7vw, 2.8rem);
+      color: #3b2b1f;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      letter-spacing: -0.02em;
+    }
+
+    h1 .badge {
+      background: #c6b2a0;
+      padding: 6px 20px;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1f1a14;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #6b5843;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 2px solid #e2d3c6;
+      padding-bottom: 14px;
+    }
+
+    .total-info {
+      background: #e0d2c4;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+    }
+
+    /* Pencarian */
+    .search-section {
+      margin: 22px 0 28px;
+    }
+
+    .search-wrapper {
+      display: flex;
+      max-width: 550px;
+      background: white;
+      border-radius: 60px;
+      padding: 4px 4px 4px 24px;
+      align-items: center;
+      box-shadow: 0 6px 16px rgba(100, 70, 40, 0.06);
+      border: 1px solid #e2cfbe;
+    }
+
+    .search-icon {
+      color: #9b846e;
+      font-size: 1.3rem;
+      margin-right: 8px;
+    }
+
+    #searchInput {
+      flex: 1;
+      border: none;
+      padding: 16px 6px 16px 0;
+      font-size: 1.1rem;
+      font-family: 'Quicksand', sans-serif;
+      background: transparent;
+      outline: none;
+      color: #2e241c;
+    }
+
+    #searchInput::placeholder {
+      color: #b9a692;
+      font-weight: 400;
+    }
+
+    .search-wrapper button {
+      background: #cdbcab;
+      border: none;
+      border-radius: 60px;
+      padding: 12px 24px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #2f241b;
+      cursor: pointer;
+      transition: 0.15s;
+      border: 1px solid #efe0d3;
+      box-shadow: 0 3px 0 #9b8979;
+      margin: 3px 3px 3px 0;
+    }
+
+    .search-wrapper button:active {
+      transform: translateY(3px);
+      box-shadow: none;
+    }
+
+    .search-info {
+      margin-top: 10px;
+      color: #735e4c;
+      font-size: 0.95rem;
+    }
+
+    /* Grid kanji */
+    .kanji-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    /* Kartu kanji */
+    .kanji-item {
+      background: #fffcf9;
+      border-radius: 24px;
+      padding: 22px 16px 18px;
+      box-shadow: 0 12px 24px -8px rgba(70, 50, 30, 0.08);
+      border: 1px solid #efe1d4;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .kanji-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 30px -10px rgba(80, 55, 30, 0.12);
+      background: #fffffe;
+    }
+
+    .kanji-char {
+      font-family: 'Noto Sans JP', serif;
+      font-weight: 700;
+      font-size: 2.8rem;
+      line-height: 1.3;
+      color: #1e3a1e;
+      margin-bottom: 14px;
+      word-break: break-word;
+    }
+
+    .kanji-reading {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: #5a4a3a;
+      background: #f1e8df;
+      padding: 4px 16px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-bottom: 12px;
+      word-break: break-word;
+    }
+
+    .kanji-meaning {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #1f2e1b;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    /* pesan kosong */
+    .empty-message {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px;
+      font-size: 1.5rem;
+      color: #7f6e5d;
+    }
+
+    /* navigasi bawah */
+    .footer-nav {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .back-link {
+      background: #d9c9bb;
+      padding: 12px 26px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #2b211a;
+      text-decoration: none;
+      box-shadow: 0 5px 0 #ab9683;
+      transition: 0.1s;
+      border: 1px solid #efe2d7;
+      display: inline-block;
+    }
+
+    .back-link:active {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 #ab9683;
+    }
+
+    .scroll-top {
+      background: #e7dbd0;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    /* highlight pencarian */
+    .highlight {
+      background-color: #f9eeb2;
+      border-radius: 6px;
+      padding: 0 2px;
+    }
+
+    /* responsif */
+    @media (max-width: 520px) {
+      body { padding: 16px 12px; }
+      .kanji-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .kanji-char { font-size: 2.3rem; }
+      .kanji-reading { font-size: 1rem; }
+      .kanji-meaning { font-size: 1.2rem; }
+      .search-wrapper { padding-left: 16px; }
+      #searchInput { font-size: 1rem; }
+    }
+
+    @media (max-width: 360px) {
+      .kanji-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="header">
+    <h1>
+      🈷️ Kumpulan Kanji Kosakata
+      <span class="badge">versi lengkap</span>
+    </h1>
+    <div class="subtitle">
+      <span>✨ Seluruh kanji, cara baca, dan arti</span>
+      <span class="total-info" id="totalDisplay">0 kanji</span>
+    </div>
+  </div>
+
+  <!-- Pencarian -->
+  <div class="search-section">
+    <div class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Cari kanji, bacaan, atau arti..." autocomplete="off" aria-label="Cari kanji">
+      <button id="clearSearchBtn" aria-label="Hapus pencarian">✕ clear</button>
+    </div>
+    <div class="search-info" id="searchResultInfo"></div>
+  </div>
+
+  <!-- Grid Kanji -->
+  <div id="kanjiGrid" class="kanji-grid">
+    <div class="empty-message">Memuat data kanji...</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-nav">
+    <a href="#" class="back-link" onclick="history.back(); return false;">← Kembali</a>
+    <button class="scroll-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">⬆️ Kembali ke atas</button>
+  </div>
+</div>
+
+<script>
+  (function(){
+    "use strict";
+
+    // DOM
+    const gridContainer = document.getElementById('kanjiGrid');
+    const totalDisplay = document.getElementById('totalDisplay');
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const searchResultInfo = document.getElementById('searchResultInfo');
+
+    let masterData = [];          // semua data dari JSON
+    let filteredData = [];        // data setelah filter
+    let currentSearchTerm = '';
+
+    // Render grid
+    function renderGrid(data) {
+      if (!data.length) {
+        gridContainer.innerHTML = `<div class="empty-message">😕 Tidak ada kanji yang cocok.</div>`;
+        searchResultInfo.textContent = `Tidak ada hasil untuk "${currentSearchTerm}"`;
+        totalDisplay.textContent = `0 kanji (dari ${masterData.length})`;
+        return;
+      }
+
+      let html = '';
+      data.forEach(item => {
+        html += `
+          <div class="kanji-item">
+            <div class="kanji-char">${item.kanji || '?'}</div>
+            <div class="kanji-reading">${item.reading || ''}</div>
+            <div class="kanji-meaning">${item.meaning || ''}</div>
+          </div>
+        `;
+      });
+
+      gridContainer.innerHTML = html;
+      
+      // Update info
+      if (currentSearchTerm.trim() === '') {
+        totalDisplay.textContent = `${data.length} kanji`;
+        searchResultInfo.textContent = '';
+      } else {
+        totalDisplay.textContent = `${data.length} kanji (dari ${masterData.length})`;
+        searchResultInfo.textContent = `Menampilkan ${data.length} hasil untuk "${currentSearchTerm}"`;
+      }
+
+      // Highlight teks jika ada pencarian
+      if (currentSearchTerm.trim() !== '') {
+        highlightText(currentSearchTerm);
+      }
+    }
+
+    // Fungsi highlight
+    function highlightText(term) {
+      if (!term) return;
+      const cards = document.querySelectorAll('.kanji-item');
+      const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
+      
+      cards.forEach(card => {
+        const charEl = card.querySelector('.kanji-char');
+        const readEl = card.querySelector('.kanji-reading');
+        const meanEl = card.querySelector('.kanji-meaning');
+        
+        if (charEl) charEl.innerHTML = charEl.textContent.replace(regex, '<span class="highlight">$1</span>');
+        if (readEl) readEl.innerHTML = readEl.textContent.replace(regex, '<span class="highlight">$1</span>');
+        if (meanEl) meanEl.innerHTML = meanEl.textContent.replace(regex, '<span class="highlight">$1</span>');
+      });
+    }
+
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    // Filter data
+    function filterData(searchTerm) {
+      const term = searchTerm.trim().toLowerCase();
+      currentSearchTerm = term;
+      
+      if (term === '') {
+        filteredData = [...masterData];
+      } else {
+        filteredData = masterData.filter(item => {
+          return (item.kanji && item.kanji.toLowerCase().includes(term)) ||
+                 (item.reading && item.reading.toLowerCase().includes(term)) ||
+                 (item.meaning && item.meaning.toLowerCase().includes(term));
+        });
+      }
+      
+      renderGrid(filteredData);
+    }
+
+    // Fetch data
+    async function loadData() {
+      try {
+        const response = await fetch('data/Data Kanji.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const json = await response.json();
+        masterData = json;
+        filteredData = [...masterData];
+        
+        totalDisplay.textContent = `${masterData.length} kanji`;
+        renderGrid(filteredData);
+      } catch (error) {
+        console.error('Gagal memuat data kanji:', error);
+        gridContainer.innerHTML = `<div class="empty-message">⚠️ Gagal memuat data. Pastikan file JSON tersedia.</div>`;
+        totalDisplay.textContent = 'error';
+      }
+    }
+
+    // Event listeners
+    searchInput.addEventListener('input', (e) => {
+      filterData(e.target.value);
+    });
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      filterData('');
+      searchInput.focus();
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        filterData('');
+      }
+    });
+
+    // Load
+    loadData();
+  })();
+</script>
+</body>
+</html>

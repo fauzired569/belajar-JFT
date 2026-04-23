@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>漢字 · Flashcard Kosakata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f3ede5;
+      font-family: 'Quicksand', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+      padding: 20px 16px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .main-container {
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(1.8rem, 6vw, 2.6rem);
+      color: #2f281f;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    h1 span {
+      background: #c6b2a0;
+      color: #1f1a14;
+      font-size: 1rem;
+      padding: 4px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+    }
+
+    .control-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px 22px;
+      margin: 18px 0 28px;
+      background: #e7dbd0;
+      padding: 14px 24px;
+      border-radius: 60px;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .control-group label {
+      font-weight: 600;
+      color: #3d3228;
+    }
+
+    #cardCount {
+      width: 80px;
+      padding: 8px 10px;
+      border-radius: 40px;
+      border: 2px solid #b7a392;
+      background: white;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .btn {
+      background: #f3ede6;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 60px;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #2e261e;
+      box-shadow: 0 4px 0 #9b8979, 0 4px 10px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: 0.1s;
+      border: 1px solid #ede0d4;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn.primary {
+      background: #cdbcab;
+      box-shadow: 0 4px 0 #7f6f5f;
+      color: #1e1812;
+    }
+
+    .btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #9b8979, 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .stats {
+      margin-left: auto;
+      font-weight: 600;
+      background: #d1c1b2;
+      padding: 8px 22px;
+      border-radius: 40px;
+      color: #2c241c;
+    }
+
+    /* Grid kartu */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+      margin: 10px 0 30px;
+    }
+
+    /* Kartu flashcard */
+    .kanji-card {
+      aspect-ratio: 5 / 6;
+      background: #fffcf9;
+      border-radius: 28px;
+      box-shadow: 0 14px 24px -8px rgba(50, 35, 20, 0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid #eedfd1;
+      padding: 12px 6px;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .kanji-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(70, 45, 25, 0.18);
+      background: #fffffe;
+      border-color: #cbb5a3;
+    }
+
+    .kanji-card.flipped {
+      background: #f3eae2;
+      border-color: #b7a18e;
+    }
+
+    .kanji-front {
+      font-family: 'Noto Sans JP', serif;
+      font-weight: 700;
+      font-size: clamp(2.8rem, 9vw, 4.2rem);
+      color: #1e2f1e;
+      text-align: center;
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .card-detail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+    }
+
+    .reading {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: #4a3e32;
+      margin-bottom: 14px;
+      background: #ede1d6;
+      padding: 6px 14px;
+      border-radius: 40px;
+      display: inline-block;
+      word-break: break-word;
+    }
+
+    .meaning {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #1f2e1b;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    /* responsif kecil */
+    @media (max-width: 600px) {
+      .control-bar { border-radius: 32px; padding: 14px 18px; }
+      .stats { margin-left: 0; width: 100%; text-align: center; }
+      .card-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .kanji-front { font-size: 2.6rem; }
+      .reading { font-size: 1rem; }
+      .meaning { font-size: 1.3rem; }
+    }
+
+    @media (max-width: 380px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+
+    .empty-message {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px;
+      font-size: 1.5rem;
+      color: #7b6c5c;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      color: #6b5d4f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .back-link {
+      color: #4d3f32;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<div class="main-container">
+  <h1>
+    🈷️ Kanji Kosakata
+    <span>flashcard</span>
+  </h1>
+
+  <!-- Panel kontrol -->
+  <div class="control-bar">
+    <div class="control-group">
+      <label for="cardCount">🃏 Jumlah</label>
+      <input type="number" id="cardCount" min="1" max="50" value="12" step="1">
+    </div>
+    <button class="btn primary" id="applyBtn">Tampilkan</button>
+    <button class="btn" id="shuffleBtn">🔀 Acak</button>
+    <button class="btn" id="resetFlipBtn">🔄 Tutup Semua</button>
+    <div class="stats" id="statsDisplay">12 / 50 kartu</div>
+  </div>
+
+  <!-- Grid Flashcard -->
+  <div id="cardGrid" class="card-grid">
+    <div class="empty-message">Memuat data kosakata...</div>
+  </div>
+
+  <div class="footer-note">
+    <span>✨ Klik kartu untuk lihat cara baca & arti</span>
+    <a href="#" class="back-link" onclick="history.back(); return false;">← Kembali</a>
+  </div>
+</div>
+
+<script>
+  (function(){
+    "use strict";
+
+    // ---------- GLOBAL VARIABLES ----------
+    let masterKanjiData = [];           // seluruh data dari JSON
+    let currentCards = [];              // array objek kanji yang sedang ditampilkan
+    let flippedState = [];              // boolean per kartu
+
+    // DOM elements
+    const gridEl = document.getElementById('cardGrid');
+    const cardCountInput = document.getElementById('cardCount');
+    const applyBtn = document.getElementById('applyBtn');
+    const shuffleBtn = document.getElementById('shuffleBtn');
+    const resetFlipBtn = document.getElementById('resetFlipBtn');
+    const statsDisplay = document.getElementById('statsDisplay');
+
+    // ---------- FUNCTIONS ----------
+
+    // Ambil N item acak dari array (tanpa pengulangan, selama N <= length)
+    function getRandomItems(arr, n) {
+      if (n >= arr.length) {
+        // jika minta lebih banyak dari data, kembalikan semua (tapi max 50, data >300, aman)
+        return [...arr];
+      }
+      // Fisher–Yates sample
+      const shuffled = [...arr];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled.slice(0, n);
+    }
+
+    // Render grid berdasarkan currentCards dan flippedState
+    function renderGrid() {
+      if (!currentCards.length) {
+        gridEl.innerHTML = `<div class="empty-message">Tidak ada kartu. Pilih jumlah dan klik "Tampilkan".</div>`;
+        statsDisplay.textContent = `0 / ${masterKanjiData.length} data`;
+        return;
+      }
+
+      let html = '';
+      currentCards.forEach((card, idx) => {
+        const isFlipped = flippedState[idx];
+        const kanjiChar = card.kanji || '?';
+        const reading = card.reading || '';
+        const meaning = card.meaning || '';
+
+        html += `
+          <div class="kanji-card ${isFlipped ? 'flipped' : ''}" data-index="${idx}">
+            ${!isFlipped ? 
+              `<div class="kanji-front">${kanjiChar}</div>` : 
+              `<div class="card-detail">
+                <div class="reading">${reading}</div>
+                <div class="meaning">${meaning}</div>
+              </div>`
+            }
+          </div>
+        `;
+      });
+
+      gridEl.innerHTML = html;
+      statsDisplay.textContent = `${currentCards.length} / ${masterKanjiData.length} kata`;
+    }
+
+    // Set kartu baru dengan jumlah tertentu (random pick)
+    function setNewCardSet(count) {
+      if (!masterKanjiData.length) {
+        alert('Data belum dimuat.');
+        return;
+      }
+      const n = Math.min(count, masterKanjiData.length);
+      const selected = getRandomItems(masterKanjiData, n);
+      currentCards = selected;
+      flippedState = new Array(currentCards.length).fill(false);
+      renderGrid();
+    }
+
+    // Toggle flip kartu tertentu
+    function toggleFlip(index) {
+      if (index >= 0 && index < flippedState.length) {
+        flippedState[index] = !flippedState[index];
+        renderGrid();
+      }
+    }
+
+    // Reset semua flip ke false
+    function resetAllFlips() {
+      if (!currentCards.length) return;
+      flippedState = new Array(currentCards.length).fill(false);
+      renderGrid();
+    }
+
+    // Acak ulang dengan jumlah yang sama seperti sekarang
+    function reshuffleCurrent() {
+      if (!masterKanjiData.length) return;
+      const count = currentCards.length || parseInt(cardCountInput.value, 10) || 12;
+      setNewCardSet(count);
+    }
+
+    // ---------- EVENT LISTENERS (delegasi) ----------
+    gridEl.addEventListener('click', (e) => {
+      // Cari kartu yang diklik
+      const card = e.target.closest('.kanji-card');
+      if (!card) return;
+      const index = card.dataset.index;
+      if (index !== undefined) {
+        toggleFlip(parseInt(index, 10));
+      }
+    });
+
+    applyBtn.addEventListener('click', () => {
+      let count = parseInt(cardCountInput.value, 10);
+      if (isNaN(count) || count < 1) count = 1;
+      if (count > 50) count = 50;
+      cardCountInput.value = count;
+      setNewCardSet(count);
+    });
+
+    shuffleBtn.addEventListener('click', () => {
+      if (!masterKanjiData.length) return;
+      // gunakan jumlah dari input saat ini
+      let count = parseInt(cardCountInput.value, 10);
+      if (isNaN(count) || count < 1) count = 12;
+      if (count > 50) count = 50;
+      cardCountInput.value = count;
+      setNewCardSet(count);
+    });
+
+    resetFlipBtn.addEventListener('click', () => {
+      resetAllFlips();
+    });
+
+    // Input number: batasi manual
+    cardCountInput.addEventListener('change', () => {
+      let val = parseInt(cardCountInput.value, 10);
+      if (val < 1) val = 1;
+      if (val > 50) val = 50;
+      cardCountInput.value = val;
+    });
+
+    // Keyboard support (opsional)
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'r' || e.key === 'R') {
+        e.preventDefault();
+        reshuffleCurrent();
+      }
+    });
+
+    // ---------- LOAD DATA ----------
+    async function loadKanjiData() {
+      try {
+        // Path sesuai struktur project
+        const response = await fetch('data/Data Kanji.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const json = await response.json();
+        masterKanjiData = json;
+        
+        // Set awal dengan jumlah default (12)
+        const defaultCount = 12;
+        cardCountInput.value = defaultCount;
+        setNewCardSet(defaultCount);
+      } catch (error) {
+        console.error('Gagal memuat data Kanji:', error);
+        gridEl.innerHTML = `<div class="empty-message">⚠️ Gagal memuat data. Pastikan file JSON tersedia di folder data/.</div>`;
+        statsDisplay.textContent = 'error';
+      }
+    }
+
+    // Mulai
+    loadKanjiData();
+
+  })();
+</script>
+</body>
+</html>

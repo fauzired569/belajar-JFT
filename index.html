@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>日本語 · Kanji & Pola</title>
+  <!-- Font & Ikon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f2eb;
+      font-family: 'Quicksand', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+      padding: 24px 20px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #2c241e;
+    }
+
+    .main-wrapper {
+      max-width: 1300px;
+      width: 100%;
+    }
+
+    /* header */
+    .hero {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2.2rem, 8vw, 3.4rem);
+      color: #352a1f;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      background: #cdbcab;
+      padding: 6px 20px;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1f1a14;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #6b5843;
+      margin-top: 8px;
+      border-bottom: 2px dotted #d6c5b6;
+      padding-bottom: 18px;
+      display: inline-block;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* Dua menu utama */
+    .menu-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin: 30px 0 40px;
+    }
+
+    .menu-card {
+      flex: 1 1 280px;
+      min-width: 260px;
+      max-width: 400px;
+      background: #fffcf9;
+      border-radius: 56px;
+      padding: 32px 24px 36px;
+      box-shadow: 0 18px 32px -10px rgba(80, 55, 35, 0.1);
+      border: 2px solid #f0e1d4;
+      text-align: center;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      backdrop-filter: blur(2px);
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 40px -14px rgba(90, 60, 35, 0.18);
+      border-color: #cfbba9;
+      background: #fffffe;
+    }
+
+    .menu-icon {
+      font-size: 4.5rem;
+      margin-bottom: 16px;
+    }
+
+    .menu-title {
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #3d2e20;
+      margin-bottom: 14px;
+    }
+
+    .menu-desc {
+      color: #665845;
+      font-size: 1rem;
+      margin-bottom: 24px;
+      padding: 0 6px;
+    }
+
+    .menu-btn {
+      display: inline-block;
+      background: #e2d1c2;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 700;
+      color: #2b2119;
+      box-shadow: 0 5px 0 #b7a18e;
+      font-size: 1.1rem;
+      transition: 0.1s;
+      border: 1px solid #ede0d4;
+    }
+
+    .menu-card:hover .menu-btn {
+      background: #d3beac;
+      box-shadow: 0 5px 0 #9c8876;
+    }
+
+    /* Bagian "Tebak Cepat" */
+    .quick-section {
+      margin-top: 10px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .section-title h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #3e3125;
+    }
+
+    .section-title span {
+      background: #e7dbd0;
+      padding: 4px 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .flash-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* Kartu flash kecil */
+    .mini-flash {
+      background: #fffcf9;
+      border-radius: 32px;
+      padding: 22px 16px 24px;
+      box-shadow: 0 12px 24px -8px rgba(70, 50, 30, 0.08);
+      border: 1px solid #efe1d4;
+      transition: all 0.15s;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mini-flash:hover {
+      background: #fffffe;
+      border-color: #cdbba9;
+    }
+
+    .mini-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #9b846e;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .kanji-big {
+      font-family: 'Noto Sans JP', serif;
+      font-weight: 700;
+      font-size: 4.5rem;
+      line-height: 1.2;
+      color: #1e3a1e;
+      margin: 4px 0 8px;
+      word-break: break-word;
+    }
+
+    .mini-reading {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: #5a4a3a;
+      background: #f1e8df;
+      padding: 4px 16px;
+      border-radius: 40px;
+      display: inline-block;
+      margin: 8px 0 6px;
+    }
+
+    .mini-meaning {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #1f2e1b;
+    }
+
+    .pola-jp-sentence {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: #1f2e1b;
+      margin: 10px 0 12px;
+      word-break: break-word;
+    }
+
+    .pola-translation {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #4f4237;
+      font-style: italic;
+      background: #f3ede5;
+      padding: 8px 16px;
+      border-radius: 30px;
+    }
+
+    .refresh-btn {
+      margin-top: 16px;
+      background: none;
+      border: 1.5px dashed #b7a392;
+      padding: 8px 18px;
+      border-radius: 60px;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      color: #5f4e3e;
+      cursor: pointer;
+      transition: 0.1s;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f9f4ef;
+    }
+
+    .refresh-btn:hover {
+      background: #e7dbd0;
+      border: 1.5px solid #a28d7a;
+    }
+
+    .footer-note {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      color: #6b5d4f;
+    }
+
+    .footer-note a {
+      color: #4d3f32;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* responsif */
+    @media (max-width: 700px) {
+      .flash-duo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .menu-title { font-size: 1.9rem; }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 16px 12px; }
+      .kanji-big { font-size: 3.5rem; }
+      .pola-jp-sentence { font-size: 1.3rem; }
+    }
+
+    /* state flip */
+    .mini-flash .front-view { display: block; }
+    .mini-flash .back-view { display: none; }
+    .mini-flash.flipped .front-view { display: none; }
+    .mini-flash.flipped .back-view { display: block; }
+
+    .loading-placeholder {
+      opacity: 0.7;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="main-wrapper">
+  
+  <!-- Hero -->
+  <div class="hero">
+    <h1>
+      🎌 にほんご
+      <span class="hero-badge">Kanji & Pola</span>
+    </h1>
+    <div class="tagline">pilih petualangan belajarmu</div>
+  </div>
+
+  <!-- Dua pilihan utama -->
+  <div class="menu-row">
+    <a href="kanji utama.html" class="menu-card">
+      <div class="menu-icon">🈷️📇</div>
+      <div class="menu-title">Kanji</div>
+      <div class="menu-desc">Flashcard & daftar lengkap<br>lebih dari 300 kosakata</div>
+      <span class="menu-btn">Jelajahi Kanji →</span>
+    </a>
+    <a href="pola kalimat utama.html" class="menu-card">
+      <div class="menu-icon">📖🔹</div>
+      <div class="menu-title">Pola Kalimat</div>
+      <div class="menu-desc">Flashcard & kumpulan pola<br>lengkap dengan contoh</div>
+      <span class="menu-btn">Jelajahi Pola →</span>
+    </a>
+  </div>
+
+  <!-- Tebak Cepat: Flashcard mini acak -->
+  <div class="quick-section">
+    <div class="section-title">
+      <h2>✨ Tebak Cepat</h2>
+      <span>klik kartu untuk lihat arti</span>
+    </div>
+
+    <div class="flash-duo">
+      <!-- Kartu Kanji Acak -->
+      <div class="mini-flash" id="kanjiFlash">
+        <div class="mini-label">🈷️ Kanji Acak</div>
+        <div id="kanjiFront" class="front-view">
+          <div class="kanji-big" id="kanjiChar">魚</div>
+          <div style="margin-top: 6px; color: #a28d7a; font-size: 0.9rem;">ketuk untuk balik</div>
+        </div>
+        <div id="kanjiBack" class="back-view">
+          <div class="mini-reading" id="kanjiReading">さかな</div>
+          <div class="mini-meaning" id="kanjiMeaning">Ikan</div>
+        </div>
+        <button class="refresh-btn" id="refreshKanjiBtn" aria-label="Acak kanji">⟳ Kanji lain</button>
+      </div>
+
+      <!-- Kartu Pola Acak (contoh kalimat) -->
+      <div class="mini-flash" id="polaFlash">
+        <div class="mini-label">📝 Contoh Pola Acak</div>
+        <div id="polaFront" class="front-view">
+          <div class="pola-jp-sentence" id="polaJpText">このボタンを押すと、ドアがしまるんです。</div>
+          <div style="margin-top: 6px; color: #a28d7a; font-size: 0.9rem;">ketuk untuk terjemahan</div>
+        </div>
+        <div id="polaBack" class="back-view">
+          <div class="pola-translation" id="polaIdText">Jika tombol ini ditekan, pintunya tertutup.</div>
+          <div style="margin-top: 12px; font-size: 0.9rem; opacity:0.8;">(contoh pola)</div>
+        </div>
+        <button class="refresh-btn" id="refreshPolaBtn" aria-label="Acak contoh">⟳ Contoh lain</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <span>📚 Data diperbarui · lebih dari 300 kanji & 70 pola</span>
+    <a href="#" onclick="history.back(); return false;">← Kembali</a>
+  </div>
+</div>
+
+<script>
+  (function() {
+    "use strict";
+
+    // ---------- DATA GLOBAL ----------
+    let kanjiList = [];          // semua data kanji
+    let polaList = [];           // semua data pola
+
+    // State flip (terpisah untuk dua kartu)
+    let isKanjiFlipped = false;
+    let isPolaFlipped = false;
+
+    // Elemen DOM
+    const kanjiFlash = document.getElementById('kanjiFlash');
+    const polaFlash = document.getElementById('polaFlash');
+    
+    // Kanji elements
+    const kanjiCharEl = document.getElementById('kanjiChar');
+    const kanjiReadingEl = document.getElementById('kanjiReading');
+    const kanjiMeaningEl = document.getElementById('kanjiMeaning');
+    
+    // Pola elements
+    const polaJpTextEl = document.getElementById('polaJpText');
+    const polaIdTextEl = document.getElementById('polaIdText');
+
+    // Tombol refresh
+    const refreshKanjiBtn = document.getElementById('refreshKanjiBtn');
+    const refreshPolaBtn = document.getElementById('refreshPolaBtn');
+
+    // ---------- FUNGSI UTILITAS ----------
+    function getRandomItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // ----- KANJI: update dengan item acak -----
+    function updateKanjiCard(item) {
+      kanjiCharEl.textContent = item.kanji || '?';
+      kanjiReadingEl.textContent = item.reading || '';
+      kanjiMeaningEl.textContent = item.meaning || '';
+    }
+
+    function pickRandomKanji() {
+      if (!kanjiList.length) return;
+      const randomKanji = getRandomItem(kanjiList);
+      updateKanjiCard(randomKanji);
+      // Reset flip ke depan (tidak flipped)
+      if (isKanjiFlipped) {
+        kanjiFlash.classList.remove('flipped');
+        isKanjiFlipped = false;
+      }
+    }
+
+    // ----- POLA: update dengan contoh acak dari data pola -----
+    // Kita perlu mengambil contoh kalimat secara random dari seluruh data pola
+    function getRandomExample() {
+      if (!polaList.length) return null;
+      
+      // Kumpulkan semua contoh dari semua pola
+      let allExamples = [];
+      polaList.forEach(polaItem => {
+        if (polaItem.contoh && Array.isArray(polaItem.contoh)) {
+          polaItem.contoh.forEach(cth => {
+            allExamples.push({
+              kalimat: cth.kalimat,
+              terjemahan: cth.terjemahan,
+            });
+          });
+        }
+      });
+      
+      if (allExamples.length === 0) {
+        // fallback
+        return { kalimat: "今日はいい天気ですね。", terjemahan: "Hari ini cuacanya bagus ya." };
+      }
+      return getRandomItem(allExamples);
+    }
+
+    function updatePolaCard(example) {
+      polaJpTextEl.textContent = example.kalimat || '(contoh kalimat)';
+      polaIdTextEl.textContent = example.terjemahan || '';
+    }
+
+    function pickRandomExample() {
+      const example = getRandomExample();
+      if (example) {
+        updatePolaCard(example);
+      } else {
+        polaJpTextEl.textContent = 'データを読込中...';
+        polaIdTextEl.textContent = 'Memuat contoh';
+      }
+      // Reset flip
+      if (isPolaFlipped) {
+        polaFlash.classList.remove('flipped');
+        isPolaFlipped = false;
+      }
+    }
+
+    // ----- FLIP HANDLER (klik pada kartu, bukan tombol) -----
+    kanjiFlash.addEventListener('click', (e) => {
+      // Jangan flip jika klik berasal dari tombol refresh (atau turunannya)
+      if (e.target.closest('.refresh-btn')) return;
+      
+      if (!kanjiList.length) return;
+      isKanjiFlipped = !isKanjiFlipped;
+      if (isKanjiFlipped) {
+        kanjiFlash.classList.add('flipped');
+      } else {
+        kanjiFlash.classList.remove('flipped');
+      }
+    });
+
+    polaFlash.addEventListener('click', (e) => {
+      if (e.target.closest('.refresh-btn')) return;
+      
+      if (!polaList.length) return;
+      isPolaFlipped = !isPolaFlipped;
+      if (isPolaFlipped) {
+        polaFlash.classList.add('flipped');
+      } else {
+        polaFlash.classList.remove('flipped');
+      }
+    });
+
+    // Tombol refresh (stop propagation agar tidak trigger flip)
+    refreshKanjiBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      pickRandomKanji();
+    });
+
+    refreshPolaBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      pickRandomExample();
+    });
+
+    // ---------- LOAD DATA JSON (parallel) ----------
+    async function loadAllData() {
+      try {
+        // Tampilkan placeholder sementara
+        kanjiCharEl.textContent = '⋯';
+        polaJpTextEl.textContent = 'Memuat data...';
+        
+        const [kanjiRes, polaRes] = await Promise.all([
+          fetch('data/Data Kanji.json'),
+          fetch('data/Data Pola kalimat.json')
+        ]);
+        
+        if (!kanjiRes.ok) throw new Error(`Kanji HTTP ${kanjiRes.status}`);
+        if (!polaRes.ok) throw new Error(`Pola HTTP ${polaRes.status}`);
+        
+        const kanjiJson = await kanjiRes.json();
+        const polaJson = await polaRes.json();
+        
+        kanjiList = kanjiJson;
+        polaList = polaJson;
+        
+        // Inisialisasi acak pertama
+        if (kanjiList.length) {
+          pickRandomKanji();
+        } else {
+          kanjiCharEl.textContent = '?';
+        }
+        
+        if (polaList.length) {
+          pickRandomExample();
+        } else {
+          polaJpTextEl.textContent = 'Tidak ada contoh.';
+        }
+        
+      } catch (error) {
+        console.error('Gagal memuat data:', error);
+        kanjiCharEl.textContent = '⚠️';
+        kanjiReadingEl.textContent = 'Gagal';
+        kanjiMeaningEl.textContent = 'Periksa koneksi';
+        
+        polaJpTextEl.textContent = '⚠️ Gagal memuat data';
+        polaIdTextEl.textContent = 'Pastikan file JSON tersedia';
+      }
+    }
+
+    // Mulai
+    loadAllData();
+
+    // Opsional: keyboard shortcut? tidak perlu.
+    // Pastikan link "kanji utama.html" dan "pola kalimat utama.html" sudah ada di project
+    // Jika belum, bisa disesuaikan nanti.
+
+  })();
+</script>
+</body>
+</html>

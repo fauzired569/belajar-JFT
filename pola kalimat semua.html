@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <title>📚 Daftar Lengkap Pola Kalimat Jepang</title>
+  <!-- Font & style dasar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf6f0;
+      font-family: 'Quicksand', 'Noto Sans JP', sans-serif;
+      padding: 24px 20px 40px;
+      color: #2c241e;
+    }
+
+    .page-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* header */
+    .header {
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2rem, 8vw, 2.8rem);
+      color: #3b2b1f;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      letter-spacing: -0.02em;
+    }
+
+    h1 .badge {
+      background: #d4bfae;
+      padding: 6px 20px;
+      border-radius: 60px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2f241c;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #6b5843;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 2px solid #e2d3c6;
+      padding-bottom: 16px;
+    }
+
+    .total-info {
+      background: #e7dbd0;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+    }
+
+    /* Kontrol pencarian (opsional tapi membantu) */
+    .search-section {
+      margin: 20px 0 28px;
+    }
+
+    .search-wrapper {
+      display: flex;
+      max-width: 600px;
+      background: white;
+      border-radius: 60px;
+      padding: 4px 4px 4px 24px;
+      align-items: center;
+      box-shadow: 0 6px 16px rgba(100, 70, 40, 0.08);
+      border: 1px solid #e2cfbe;
+    }
+
+    .search-wrapper i {
+      color: #9b846e;
+      font-size: 1.3rem;
+      margin-right: 8px;
+    }
+
+    #searchInput {
+      flex: 1;
+      border: none;
+      padding: 16px 6px 16px 0;
+      font-size: 1.1rem;
+      font-family: 'Quicksand', sans-serif;
+      background: transparent;
+      outline: none;
+      color: #2e241c;
+    }
+
+    #searchInput::placeholder {
+      color: #b9a692;
+      font-weight: 400;
+    }
+
+    .search-wrapper button {
+      background: #cbb7a7;
+      border: none;
+      border-radius: 60px;
+      padding: 12px 24px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #2f241b;
+      cursor: pointer;
+      transition: 0.15s;
+      border: 1px solid #efe0d3;
+      box-shadow: 0 3px 0 #a58d7a;
+      margin: 3px 3px 3px 0;
+    }
+
+    .search-wrapper button:active {
+      transform: translateY(3px);
+      box-shadow: none;
+    }
+
+    /* Grid daftar */
+    .pola-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+      margin-top: 10px;
+    }
+
+    /* Kartu pola */
+    .pola-card {
+      background: #fffffffb;
+      border-radius: 32px;
+      padding: 24px 22px 22px;
+      box-shadow: 0 12px 28px -8px rgba(70, 50, 30, 0.1);
+      border: 1px solid #efe1d4;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      backdrop-filter: blur(2px);
+    }
+
+    .pola-card:hover {
+      box-shadow: 0 20px 32px -12px rgba(80, 55, 30, 0.15);
+      transform: translateY(-3px);
+      background: #fffffe;
+    }
+
+    .pola-header {
+      border-bottom: 2px dashed #d9c9bb;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+    }
+
+    .pola-name {
+      font-family: 'Noto Sans JP', 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 1.7rem;
+      line-height: 1.4;
+      color: #1f2a1c;
+      word-break: break-word;
+    }
+
+    .pola-name small {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #7f6e5b;
+      margin-left: 6px;
+    }
+
+    /* jika ada multi pola (array) */
+    .pola-variants {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-top: 6px;
+    }
+
+    .variant-tag {
+      background: #ede3da;
+      padding: 2px 14px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #3f3327;
+      font-weight: 500;
+    }
+
+    .arti-section {
+      margin: 14px 0 18px;
+    }
+
+    .arti-label {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #5e4a36;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .arti-text {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1f1a14;
+      line-height: 1.3;
+      background: #fbf4ec;
+      padding: 10px 16px;
+      border-radius: 22px;
+      border-left: 6px solid #b7a18e;
+    }
+
+    .contoh-section {
+      margin-top: 6px;
+      flex: 1;
+    }
+
+    .contoh-label {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #695845;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contoh-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contoh-item {
+      background: #f9f3ec;
+      padding: 14px 16px;
+      border-radius: 20px;
+    }
+
+    .contoh-jp {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #1e3a1e;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    .contoh-id {
+      font-size: 1rem;
+      color: #5a4c3f;
+      padding-left: 8px;
+      border-left: 3px solid #beab9b;
+      font-style: italic;
+    }
+
+    .empty-message {
+      text-align: center;
+      padding: 40px;
+      font-size: 1.5rem;
+      color: #7f6e5d;
+      grid-column: 1 / -1;
+    }
+
+    /* tombol kembali / navigasi */
+    .back-link {
+      margin-top: 36px;
+      display: inline-block;
+      background: #d9c9bb;
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #2b211a;
+      text-decoration: none;
+      box-shadow: 0 6px 0 #ab9683;
+      transition: 0.1s;
+      border: 1px solid #efe2d7;
+    }
+
+    .back-link:active {
+      transform: translateY(5px);
+      box-shadow: 0 1px 0 #ab9683;
+    }
+
+    /* responsif */
+    @media (max-width: 600px) {
+      body { padding: 16px 12px; }
+      .pola-grid { grid-template-columns: 1fr; gap: 18px; }
+      .pola-name { font-size: 1.6rem; }
+      .arti-text { font-size: 1.3rem; }
+      .search-wrapper { padding-left: 16px; }
+      #searchInput { font-size: 1rem; }
+    }
+
+    /* fallback icon pakai teks */
+    .icon {
+      font-style: normal;
+    }
+
+    .highlight {
+      background-color: #f9f1b6;
+      border-radius: 6px;
+      padding: 0 2px;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="header">
+    <h1>
+      📖 Kumpulan Pola Kalimat
+      <span class="badge">versi lengkap</span>
+    </h1>
+    <div class="subtitle">
+      <span>✨ Semua pola, arti, dan contoh kalimat</span>
+      <span class="total-info" id="totalDisplay">0 pola</span>
+    </div>
+  </div>
+
+  <!-- Pencarian sederhana -->
+  <div class="search-section">
+    <div class="search-wrapper">
+      <span class="icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Cari pola atau arti..." autocomplete="off" aria-label="Cari pola">
+      <button id="clearSearchBtn" aria-label="Hapus pencarian">✕ clear</button>
+    </div>
+    <div style="margin-top: 10px; color:#735e4c; font-size:0.95rem;" id="searchResultInfo"></div>
+  </div>
+
+  <!-- Grid pola -->
+  <div id="polaGridContainer" class="pola-grid">
+    <div class="empty-message">Memuat data pola kalimat ...</div>
+  </div>
+
+  <!-- Navigasi -->
+  <div style="margin-top: 40px;">
+    <a href="#" class="back-link" onclick="history.back(); return false;">← Kembali ke halaman sebelumnya</a>
+    <span style="margin-left: 20px; color:#7f6e5d;">⬆️ Scroll untuk lihat semua</span>
+  </div>
+</div>
+
+<script>
+  (function(){
+    "use strict";
+
+    // DOM
+    const gridContainer = document.getElementById('polaGridContainer');
+    const totalDisplay = document.getElementById('totalDisplay');
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const searchResultInfo = document.getElementById('searchResultInfo');
+
+    let masterData = [];          // data asli dari JSON
+    let filteredData = [];        // data setelah filter
+    let currentSearchTerm = '';
+
+    // ---- Fungsi bantu format ----
+    function formatPola(pola) {
+      if (Array.isArray(pola)) {
+        return pola.join('  ·  ');
+      }
+      return pola;
+    }
+
+    // Mengembalikan array string pola (untuk ditampilkan sebagai tag)
+    function getPolaArray(pola) {
+      if (Array.isArray(pola)) return pola;
+      return [pola];
+    }
+
+    // Render seluruh grid berdasarkan filteredData
+    function renderGrid(data) {
+      if (!data.length) {
+        gridContainer.innerHTML = `<div class="empty-message">😕 Tidak ada pola yang cocok dengan pencarian.</div>`;
+        searchResultInfo.textContent = `Tidak ada hasil untuk "${currentSearchTerm}"`;
+        totalDisplay.textContent = `0 pola (dari ${masterData.length})`;
+        return;
+      }
+
+      let html = '';
+      data.forEach((item, idx) => {
+        const polaRaw = item.pola;
+        const polaArray = getPolaArray(polaRaw);
+        const mainPola = polaArray[0]; // untuk tampilan utama
+        
+        // contoh
+        const contohList = item.contoh || [];
+        
+        html += `
+          <div class="pola-card" data-index="${idx}">
+            <div class="pola-header">
+              <div class="pola-name">
+                ${mainPola}
+                ${polaArray.length > 1 ? '<small>dll</small>' : ''}
+              </div>`;
+        
+        if (polaArray.length > 1) {
+          html += `<div class="pola-variants">`;
+          polaArray.slice(1).forEach(v => {
+            html += `<span class="variant-tag">${v}</span>`;
+          });
+          html += `</div>`;
+        }
+        
+        html += `
+            </div>
+            <div class="arti-section">
+              <span class="arti-label">📌 Arti</span>
+              <div class="arti-text">${item.arti || '—'}</div>
+            </div>
+            <div class="contoh-section">
+              <div class="contoh-label"><span>📝 Contoh</span> <span style="font-size:0.9rem;">(${contohList.length})</span></div>
+              <div class="contoh-list">`;
+        
+        if (contohList.length === 0) {
+          html += `<div class="contoh-item"><div class="contoh-jp">—</div><div class="contoh-id">(belum ada contoh)</div></div>`;
+        } else {
+          contohList.forEach(cth => {
+            html += `
+              <div class="contoh-item">
+                <div class="contoh-jp">${cth.kalimat || ''}</div>
+                <div class="contoh-id">${cth.terjemahan || ''}</div>
+              </div>
+            `;
+          });
+        }
+        
+        html += `
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      gridContainer.innerHTML = html;
+      
+      // update info
+      const totalMaster = masterData.length;
+      if (currentSearchTerm.trim() === '') {
+        totalDisplay.textContent = `${data.length} pola`;
+        searchResultInfo.textContent = '';
+      } else {
+        totalDisplay.textContent = `${data.length} pola (dari ${totalMaster})`;
+        searchResultInfo.textContent = `Menampilkan ${data.length} hasil untuk "${currentSearchTerm}"`;
+      }
+
+      // highlight teks pencarian (opsional)
+      if (currentSearchTerm.trim() !== '') {
+        highlightTextInGrid(currentSearchTerm);
+      }
+    }
+
+    // Fungsi highlight sederhana (tanpa merusak struktur)
+    function highlightTextInGrid(term) {
+      if (!term) return;
+      const cards = document.querySelectorAll('.pola-card');
+      const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
+      
+      cards.forEach(card => {
+        // highlight pada pola name, arti, contoh (hanya teks)
+        const polaNameEl = card.querySelector('.pola-name');
+        if (polaNameEl) {
+          const original = polaNameEl.textContent;
+          polaNameEl.innerHTML = original.replace(regex, '<span class="highlight">$1</span>');
+        }
+        const artiEl = card.querySelector('.arti-text');
+        if (artiEl) {
+          const orig = artiEl.textContent;
+          artiEl.innerHTML = orig.replace(regex, '<span class="highlight">$1</span>');
+        }
+        // contoh kalimat (jp & id)
+        const contohJpEls = card.querySelectorAll('.contoh-jp');
+        contohJpEls.forEach(el => {
+          const orig = el.textContent;
+          el.innerHTML = orig.replace(regex, '<span class="highlight">$1</span>');
+        });
+        const contohIdEls = card.querySelectorAll('.contoh-id');
+        contohIdEls.forEach(el => {
+          const orig = el.textContent;
+          el.innerHTML = orig.replace(regex, '<span class="highlight">$1</span>');
+        });
+      });
+    }
+
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    // Fungsi filter data
+    function filterData(searchTerm) {
+      const term = searchTerm.trim().toLowerCase();
+      currentSearchTerm = term;
+      
+      if (term === '') {
+        filteredData = [...masterData];
+      } else {
+        filteredData = masterData.filter(item => {
+          // cek di pola (string/array)
+          const polaStr = Array.isArray(item.pola) ? item.pola.join(' ') : item.pola;
+          if (polaStr.toLowerCase().includes(term)) return true;
+          
+          // cek arti
+          if (item.arti && item.arti.toLowerCase().includes(term)) return true;
+          
+          // cek contoh kalimat & terjemahan
+          if (item.contoh) {
+            return item.contoh.some(cth => 
+              (cth.kalimat && cth.kalimat.toLowerCase().includes(term)) ||
+              (cth.terjemahan && cth.terjemahan.toLowerCase().includes(term))
+            );
+          }
+          return false;
+        });
+      }
+      
+      renderGrid(filteredData);
+    }
+
+    // ---- Fetch data ----
+    async function loadData() {
+      try {
+        // Path ke JSON (sesuai struktur project)
+        const response = await fetch('data/Data Pola kalimat.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const json = await response.json();
+        masterData = json;
+        filteredData = [...masterData];
+        
+        totalDisplay.textContent = `${masterData.length} pola`;
+        renderGrid(filteredData);
+      } catch (error) {
+        console.error('Gagal memuat data:', error);
+        gridContainer.innerHTML = `<div class="empty-message">⚠️ Gagal memuat data. Pastikan file JSON tersedia di folder data/.</div>`;
+        totalDisplay.textContent = 'error';
+      }
+    }
+
+    // Event Listener pencarian
+    searchInput.addEventListener('input', (e) => {
+      filterData(e.target.value);
+    });
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      filterData('');
+      searchInput.focus();
+    });
+
+    // Escape key untuk clear (opsional)
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        filterData('');
+      }
+    });
+
+    // Inisialisasi
+    loadData();
+
+    // Re-run highlight setelah render (sudah dipanggil di renderGrid ketika ada term)
+    // Namun renderGrid menggunakan innerHTML, highlight dipanggil setelah.
+    // Perbaiki: pastikan highlight setelah innerHTML selesai.
+    const originalRender = renderGrid;
+    renderGrid = function(data) {
+      originalRender(data);
+      if (currentSearchTerm.trim() !== '') {
+        // kecil delay untuk pastikan DOM update
+        setTimeout(() => highlightTextInGrid(currentSearchTerm), 5);
+      }
+    }.bind(this);
+
+    // override
+    renderGrid = renderGrid.bind(this);
+    
+    // final: pastikan load selesai
+  })();
+</script>
+<!-- pastikan tidak ada konflik -->
+</body>
+</html>
