@@ -1,0 +1,916 @@
+[
+  {
+    "pola": "Ｖると",
+    "arti": "Jika / Kalau (Sebab, Akibat, konstan dan berurutan)",
+    "contoh": [
+      {
+        "kalimat": "このボタンを押すと、ドアがしまるんです。",
+        "terjemahan": "Jika tombol ini ditekan, pintunya tertutup."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖるつもりです",
+    "arti": "Berencana",
+    "contoh": [
+      {
+        "kalimat": "とうきょうにいくつもりです。",
+        "terjemahan": "Saya berencana pergi ke Tokyo."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖることができます",
+    "arti": "Bisa",
+    "contoh": [
+      {
+        "kalimat": "バドミントンをすることができます。",
+        "terjemahan": "Bisa bermain Bulutangkis."
+      }
+    ]
+  },
+  {
+    "pola": ["Ｖるまえに", "ＫＢのまえに"],
+    "arti": "Sebelum",
+    "contoh": [
+      {
+        "kalimat": "たべるまえにおいのりしましょう。",
+        "terjemahan": "Sebelum makan, mari berdoa."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖるといいです",
+    "arti": "Bagusnya (Menyarankan)",
+    "contoh": [
+      {
+        "kalimat": "おなかがすくとき、たべるといいです。",
+        "terjemahan": "Ketika perut lapar, bagusnya makan."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖないでください",
+    "arti": "Tolong jangan",
+    "contoh": [
+      {
+        "kalimat": "ここにすわらないでください。",
+        "terjemahan": "Tolong jangan duduk disini."
+      }
+    ]
+  },
+  {
+    "pola": ["なかなか～ません", "なかなか～ない"],
+    "arti": "Tak kunjung",
+    "contoh": [
+      {
+        "kalimat": "なかなかバスがきません。",
+        "terjemahan": "Busnya tak kunjung datang."
+      },
+      {
+        "kalimat": "なかなかあのひとがいかないよ。",
+        "terjemahan": "Orang itu tak kunjung pergi."
+      }
+    ]
+  },
+  {
+    "pola": [
+      "Ｖなければなりません",
+      "Ｖなくちゃならない",
+      "Ｖなくちゃ",
+      "Ｖないといけません",
+      "Ｖなきゃ",
+      "Ｖなくてはいけません"
+    ],
+    "arti": "Harus",
+    "contoh": [
+      {
+        "kalimat": "たべなければなりません。",
+        "terjemahan": "Harus makan."
+      }
+    ]
+  },
+  {
+    "pola": ["しか＋ません", "しか＋ない"],
+    "arti": "Hanya (Ada rasa penyesalan)",
+    "contoh": [
+      {
+        "kalimat": "私は２００漢字しかしりません。",
+        "terjemahan": "Saya hanya mengetahui 200 Kanji."
+      },
+      {
+        "kalimat": "けんさんはやさいしかたべません。",
+        "terjemahan": "Sdr Ken hanya makan sayur-sayuran."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖたことがあります",
+    "arti": "Pernah",
+    "contoh": [
+      {
+        "kalimat": "とうきょうにいったことがあります。",
+        "terjemahan": "Saya pernah pergi ke Tokyo."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖたら",
+    "arti": "Kalau (Pengandaian, kejadian secara terbatas)",
+    "contoh": [
+      {
+        "kalimat": "とうきょうにいったらおかしをかってください。",
+        "terjemahan": "Kalau pergi ke Tokyo, tolong beli cemilan."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖたばかりです",
+    "arti": "Baru saja",
+    "contoh": [
+      {
+        "kalimat": "たべたばかりです。",
+        "terjemahan": "Baru makan."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖたり、Ｖたりします",
+    "arti": "Melakukan ini dan itu (kegiatan)",
+    "contoh": [
+      {
+        "kalimat": "きょうはサワーをあびたり、ごはんをたべたりしました。",
+        "terjemahan": "Hari ini saya mandi, dan makan."
+      }
+    ]
+  },
+  {
+    "pola": ["Ｖたあとで", "ＫＢのあとで"],
+    "arti": "Setelah",
+    "contoh": [
+      {
+        "kalimat": "ごはんをたべたあとで、てをあらってください。",
+        "terjemahan": "Setelah makan, tolong cuci tangan."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖたまま",
+    "arti": "Dibiarkan begitu saja / tetap dalam keadaan",
+    "contoh": [
+      {
+        "kalimat": "このでんきはついたままです。",
+        "terjemahan": "Lampu ini dibiarkan menyala begitu saja."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖたらいいです",
+    "arti": "Bagusnya / Sebaiknya",
+    "contoh": [
+      {
+        "kalimat": "とうきょうにいったらいいです。",
+        "terjemahan": "Bagusnya pergi ke Tokyo."
+      }
+    ]
+  },
+  {
+    "pola": ["Ｖちゃだめ", "Ｖじゃだめ"],
+    "arti": "Jangan",
+    "contoh": [
+      {
+        "kalimat": "このたべものはたべちゃだめです。",
+        "terjemahan": "Jangan makan makanan ini."
+      },
+      {
+        "kalimat": "あぶないですから、このかわでおよいじゃだめです。",
+        "terjemahan": "Karena berbahaya, jangan berenang di sungai ini."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてください",
+    "arti": "Tolong",
+    "contoh": [
+      {
+        "kalimat": "このたべものはたべてください。",
+        "terjemahan": "Tolong makan makanan ini."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖています",
+    "arti": "Sedang",
+    "contoh": [
+      {
+        "kalimat": "ラメンをたべています。",
+        "terjemahan": "Saya sedang makan ramen."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてもいいですか",
+    "arti": "Bolehkah?",
+    "contoh": [
+      {
+        "kalimat": "このたべものはたべてもいいですか。",
+        "terjemahan": "Bolehkah saya makan makanan ini?"
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてから",
+    "arti": "Setelah (melakukan)",
+    "contoh": [
+      {
+        "kalimat": "たべてから、わたしはともだちとあそびます。",
+        "terjemahan": "Setelah makan, saya dan teman bermain."
+      }
+    ]
+  },
+  {
+    "pola": ["Ｖても", "ＫＳい＋くても", "ＫＳな＋でも", "ＫＢ＋でも"],
+    "arti": "Meskipun / Walaupun",
+    "contoh": [
+      {
+        "kalimat": "たべても、まだおなかがすいています。",
+        "terjemahan": "Meskipun sudah makan, masih lapar."
+      },
+      {
+        "kalimat": "たかくても、あのかばんをかいました。",
+        "terjemahan": "Meskipun mahal, saya tetap membeli tas itu."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてあげます",
+    "arti": "Memberikan (melakukan sesuatu untuk orang lain)",
+    "contoh": [
+      {
+        "kalimat": "わたしはさとうさんにほんをかしてあげます。",
+        "terjemahan": "Saya meminjamkan buku kepada Sdr Sato."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてもらいます",
+    "arti": "Menerima (dilakukan sesuatu oleh orang lain)",
+    "contoh": [
+      {
+        "kalimat": "わたしはさとうさんにほんをかしてもらいます。",
+        "terjemahan": "Saya meminjam buku dari Sdr Sato."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてくれます",
+    "arti": "Memberikan (untuk saya / pihak saya)",
+    "contoh": [
+      {
+        "kalimat": "さとうさんはわたしにほんをかしてくれます。",
+        "terjemahan": "Sdr Sato meminjamkan buku kepada saya."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてもらえませんか",
+    "arti": "Sudikah / Maukah (permintaan sopan)",
+    "contoh": [
+      {
+        "kalimat": "わたしにおしえてもらえませんか。",
+        "terjemahan": "Sudikah memberitahu saya?"
+      }
+    ]
+  },
+  {
+    "pola": "Ｖて",
+    "arti": "Karena (menyatakan sebab-akibat)",
+    "contoh": [
+      {
+        "kalimat": "たべて、おなかがいっぱいです。",
+        "terjemahan": "Karena sudah makan, saya kenyang."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてみます",
+    "arti": "Mencoba",
+    "contoh": [
+      {
+        "kalimat": "とうきょうにいってみたいです。",
+        "terjemahan": "Ingin mencoba pergi ke Tokyo."
+      }
+    ]
+  },
+  {
+    "pola": ["ＫＳくて", "ＫＳなで", "ＫＢで"],
+    "arti": "Karena",
+    "contoh": [
+      {
+        "kalimat": "からくて、たべられません。",
+        "terjemahan": "Karena pedas, saya tidak bisa makan."
+      },
+      {
+        "kalimat": "じこで、このでんしゃがうごかない。",
+        "terjemahan": "Karena kecelakaan, kereta ini tidak bergerak."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてはいけません",
+    "arti": "Dilarang",
+    "contoh": [
+      {
+        "kalimat": "きょうしつにはいってはいけません。",
+        "terjemahan": "Dilarang masuk ke kelas."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖていきます (1)",
+    "arti": "Pergi dengan (cara / alat transportasi)",
+    "contoh": [
+      {
+        "kalimat": "ここから、あるいていきます。",
+        "terjemahan": "Pergi dari sini dengan berjalan kaki."
+      },
+      {
+        "kalimat": "ジャカルタからスラバヤまででんしゃにのっていきます。",
+        "terjemahan": "Pergi dari Jakarta ke Surabaya dengan kereta api."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖていきます (2)",
+    "arti": "Pergi dengan (mengenakan sesuatu)",
+    "contoh": [
+      {
+        "kalimat": "かわいいふくをきていきます。",
+        "terjemahan": "Pergi dengan memakai baju cantik."
+      },
+      {
+        "kalimat": "ぼうしをかぶっていきます。",
+        "terjemahan": "Pergi dengan memakai topi."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてきます (1)",
+    "arti": "Datang dengan (mengenakan sesuatu)",
+    "contoh": [
+      {
+        "kalimat": "かわいいふくをきてきました。",
+        "terjemahan": "Datang dengan memakai baju cantik."
+      },
+      {
+        "kalimat": "ぼうしをかぶってきました。",
+        "terjemahan": "Datang dengan memakai topi."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてきます (2)",
+    "arti": "Melakukan sesuatu dan kembali",
+    "contoh": [
+      {
+        "kalimat": "ラメンをかってきます。",
+        "terjemahan": "Saya beli ramen (dan akan kembali)."
+      },
+      {
+        "kalimat": "トイレにいってきてもいいですか。",
+        "terjemahan": "Bolehkah saya pergi ke toilet (dan kembali)?"
+      }
+    ]
+  },
+  {
+    "pola": "Ｖているひと",
+    "arti": "Orang yang sedang melakukan",
+    "contoh": [
+      {
+        "kalimat": "やまださんはあのコピーしているひとです。",
+        "terjemahan": "Sdr Yamada adalah orang yang sedang mengkopi itu."
+      },
+      {
+        "kalimat": "グプタさんはあのすわっているひとです。",
+        "terjemahan": "Sdr Gupta adalah orang yang sedang duduk itu."
+      }
+    ]
+  },
+  {
+    "pola": "まだＶています",
+    "arti": "Masih (sedang)",
+    "contoh": [
+      {
+        "kalimat": "わたしはまだたべていますね。",
+        "terjemahan": "Saya masih makan."
+      },
+      {
+        "kalimat": "きのこさんはまだこのほんをよんでいます。",
+        "terjemahan": "Sdr Kinoko masih membaca buku ini."
+      }
+    ]
+  },
+  {
+    "pola": "まだＶていません",
+    "arti": "Belum",
+    "contoh": [
+      {
+        "kalimat": "Ａ：もうたべましたか。　Ｂ：いいえ、まだたべていません。",
+        "terjemahan": "A: Apakah sudah makan? B: Belum."
+      }
+    ]
+  },
+  {
+    "pola": ["Ｖてしまいました", "Ｖてしまった"],
+    "arti": "Disayangkan / Penyesalan / Penderitaan",
+    "contoh": [
+      {
+        "kalimat": "わたしのさいふをわすれてしまいました。",
+        "terjemahan": "Saya lupa dompet saya. (Menyesal)"
+      },
+      {
+        "kalimat": "さいふをなくしてしまいました。",
+        "terjemahan": "Kehilangan dompet. (Menyesal)"
+      },
+      {
+        "kalimat": "みちにまよってしまいました。",
+        "terjemahan": "Tersesat di jalan. (Menyatakan penderitaan dan rasa kesal)"
+      }
+    ]
+  },
+  {
+    "pola": "Ｖておきます",
+    "arti": "Terlebih dahulu / Mempersiapkan",
+    "contoh": [
+      {
+        "kalimat": "たべるまえにてをあらっておきます。",
+        "terjemahan": "Sebelum makan, saya cuci tangan terlebih dahulu."
+      },
+      {
+        "kalimat": "あそんだあとで、サワーをあびておいてください。",
+        "terjemahan": "Setelah bermain, tolong mandi terlebih dahulu."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてありがとう",
+    "arti": "Terima kasih karena",
+    "contoh": [
+      {
+        "kalimat": "ここにきてありがとう。",
+        "terjemahan": "Terima kasih karena sudah datang ke sini."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてすみません",
+    "arti": "Maaf karena",
+    "contoh": [
+      {
+        "kalimat": "おくれてすみません。",
+        "terjemahan": "Maaf karena terlambat."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてよかった",
+    "arti": "Syukurlah karena",
+    "contoh": [
+      {
+        "kalimat": "ごうかくしてよかったね。",
+        "terjemahan": "Syukurlah karena lulus."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖてあります",
+    "arti": "Ter- (keadaan hasil perbuatan)",
+    "contoh": [
+      {
+        "kalimat": "つくえのうえにパソコンがおいてあります。",
+        "terjemahan": "Komputer terletak di atas meja."
+      },
+      {
+        "kalimat": "ドアがあけてあります。",
+        "terjemahan": "Pintu terbuka."
+      }
+    ]
+  },
+  {
+    "pola": ["どんなに～ても", "いくら～ても"],
+    "arti": "Bagaimanapun / Sebanyak apapun",
+    "contoh": [
+      {
+        "kalimat": "いくらたべてもおなかがいっぱいになりません。",
+        "terjemahan": "Sebanyak apapun saya makan, perut saya sama sekali tidak kenyang."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → たい",
+    "arti": "Ingin",
+    "contoh": [
+      {
+        "kalimat": "とうきょうにいきたいです。",
+        "terjemahan": "Saya ingin pergi ke Tokyo."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → やすい",
+    "arti": "Mudah di-",
+    "contoh": [
+      {
+        "kalimat": "このまちはすみやすいですね。",
+        "terjemahan": "Kota ini mudah ditinggali (nyaman)."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → ながら",
+    "arti": "Sambil",
+    "contoh": [
+      {
+        "kalimat": "たべながらきいてください。",
+        "terjemahan": "Sambil makan, tolong dengarkan."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → にくい",
+    "arti": "Sulit di-",
+    "contoh": [
+      {
+        "kalimat": "このはしはつかいにくいです。",
+        "terjemahan": "Sumpit ini sulit digunakan."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → すぎる",
+    "arti": "Terlalu / Berlebihan",
+    "contoh": [
+      {
+        "kalimat": "タバコをすいすぎます。",
+        "terjemahan": "Terlalu banyak merokok."
+      }
+    ]
+  },
+  {
+    "pola": ["ＫＳい → すぎる", "ＫＳな → すぎる"],
+    "arti": "Terlalu",
+    "contoh": [
+      {
+        "kalimat": "あますぎる。",
+        "terjemahan": "Terlalu manis."
+      },
+      {
+        "kalimat": "きれいすぎる。",
+        "terjemahan": "Terlalu bersih."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → そうです",
+    "arti": "Kelihatannya (untuk kata kerja)",
+    "contoh": [
+      {
+        "kalimat": "あめがふりそうですね。",
+        "terjemahan": "Kelihatannya akan turun hujan."
+      }
+    ]
+  },
+  {
+    "pola": ["ＫＳい → そうです", "ＫＳな → そうです"],
+    "arti": "Kelihatannya (untuk kata sifat)",
+    "contoh": [
+      {
+        "kalimat": "このほんはおもしろそうですね。",
+        "terjemahan": "Kelihatannya buku ini menarik."
+      },
+      {
+        "kalimat": "かのじょはしんせつそうですね。",
+        "terjemahan": "Kelihatannya dia ramah."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → かた",
+    "arti": "Cara",
+    "contoh": [
+      {
+        "kalimat": "このコピーきのつかいかたをおしえてもらえませんか。",
+        "terjemahan": "Maukah anda memberitahu cara menggunakan mesin fotokopi ini?"
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → つづける",
+    "arti": "Terus-menerus",
+    "contoh": [
+      {
+        "kalimat": "あきちゃんはテレビをみつづけますね。",
+        "terjemahan": "Aki-chan terus menerus menonton televisi."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → にいきます",
+    "arti": "Pergi untuk (melakukan sesuatu)",
+    "contoh": [
+      {
+        "kalimat": "きのう、レストランにたべにいきました。",
+        "terjemahan": "Kemarin, saya pergi makan ke restoran."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → にきます",
+    "arti": "Datang untuk",
+    "contoh": [
+      {
+        "kalimat": "ともだちはにほんからわたしをおみまいにきます。",
+        "terjemahan": "Teman datang dari Jepang untuk menjenguk saya."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖます → にかえります",
+    "arti": "Pulang untuk",
+    "contoh": [
+      {
+        "kalimat": "いえにシャツをせんたくしにかえります。",
+        "terjemahan": "Pulang ke rumah untuk mencuci baju."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖ(bentuk biasa) とおもいます",
+    "arti": "Saya rasa / Saya kira",
+    "contoh": [
+      {
+        "kalimat": "すねおさんはおもしろいひとだとおもいます。",
+        "terjemahan": "Saya rasa Sdr Suneo adalah orang yang lucu."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖ(bentuk biasa) といいます",
+    "arti": "Katanya / Berkata",
+    "contoh": [
+      {
+        "kalimat": "かのじょはきれいだといいます。",
+        "terjemahan": "Katanya, pacarnya cantik."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖ(bentuk biasa) とき",
+    "arti": "Ketika",
+    "contoh": [
+      {
+        "kalimat": "ハンサムなとき、じしんがあるよ。",
+        "terjemahan": "Ketika ganteng, jadi percaya diri."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖる ＋ ＫＢ",
+    "arti": "Suatu hal yang di- (akan dilakukan)",
+    "contoh": [
+      {
+        "kalimat": "つくるりょうりです。",
+        "terjemahan": "Masakan yang dibuat / akan dibuat."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖた ＋ ＫＢ",
+    "arti": "Suatu hal yang sudah di-",
+    "contoh": [
+      {
+        "kalimat": "つくったりょうりです。",
+        "terjemahan": "Masakan yang sudah dibuat."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖ(bentuk biasa) かもしれません",
+    "arti": "Mungkin",
+    "contoh": [
+      {
+        "kalimat": "まろこちゃんはあびているかもしれません。",
+        "terjemahan": "Mungkin Maroko sedang mandi."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖる ＋ のに",
+    "arti": "Untuk (menunjukkan tujuan)",
+    "contoh": [
+      {
+        "kalimat": "ＪＦＴにごうかくするのに、ずっとべんきょうしなきゃ。",
+        "terjemahan": "Untuk lulus JFT, harus belajar terus menerus."
+      }
+    ]
+  },
+  {
+    "pola": ["Ｖた ＋ のに", "ＫＳい ＋ のに", "ＫＳな ＋ なのに", "ＫＢ ＋ なのに"],
+    "arti": "Padahal ... tetapi",
+    "contoh": [
+      {
+        "kalimat": "いっしょうけんめいべんきょうしたのに、ごうかくしませんでしたね。",
+        "terjemahan": "Padahal sudah belajar dengan sungguh-sungguh, tetapi tidak lulus."
+      },
+      {
+        "kalimat": "にちようびなのに、がっこうにいきました。",
+        "terjemahan": "Padahal hari Minggu, tetapi saya berangkat ke sekolah."
+      },
+      {
+        "kalimat": "すきなのに、「すき」といえません。",
+        "terjemahan": "Padahal suka, tapi tidak bisa bilang suka."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖ(bentuk biasa) ＋ ため(に)",
+    "arti": "Karena (sebab akibat)",
+    "contoh": [
+      {
+        "kalimat": "こうつうじこにあったため、かいしゃをやすみました。",
+        "terjemahan": "Karena mengalami kecelakaan, tidak masuk kerja."
+      }
+    ]
+  },
+  {
+    "pola": ["Ｖたほうがいいです", "Ｖないほうがいいです"],
+    "arti": "Lebih baik / Bagusnya",
+    "contoh": [
+      {
+        "kalimat": "くすりをのんだほうがいいです。",
+        "terjemahan": "Lebih baik minum obat."
+      },
+      {
+        "kalimat": "いえにかえったほうがいいです。",
+        "terjemahan": "Lebih baik pulang ke rumah."
+      },
+      {
+        "kalimat": "ひらがなでかかないほうがいいですが、かんじでかいたほうがいいです。",
+        "terjemahan": "Lebih baik tidak ditulis dengan hiragana, tetapi bagusnya ditulis dengan kanji."
+      }
+    ]
+  },
+  {
+    "pola": ["Ｖられるようになる", "Ｖられないようになる"],
+    "arti": "Menjadi (bisa/tidak bisa)",
+    "contoh": [
+      {
+        "kalimat": "いもうとはじてんしゃにのれるようになりました。",
+        "terjemahan": "Adik perempuan menjadi bisa naik sepeda."
+      }
+    ]
+  },
+  {
+    "pola": ["Ｖられるように", "Ｖないように"],
+    "arti": "Agar (supaya)",
+    "contoh": [
+      {
+        "kalimat": "にほんごがはなせるように、まいにちれんしゅうします。",
+        "terjemahan": "Agar bisa berbicara bahasa Jepang, setiap hari latihan."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖる/Ｖない ＋ ようにします",
+    "arti": "Berusaha / Membiasakan",
+    "contoh": [
+      {
+        "kalimat": "からだはどんどんふとったので、ダイエットをするようにします。",
+        "terjemahan": "Karena badan bertambah besar, berusaha diet."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖる/Ｖない ＋ ようにしています",
+    "arti": "Sedang membiasakan / Berusaha",
+    "contoh": [
+      {
+        "kalimat": "けんこうのために、タバコをすわないようにしています。",
+        "terjemahan": "Untuk kesehatan, sedang berusaha untuk tidak merokok."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖ(volitional) ＋ とおもいます / とおもっています",
+    "arti": "Bermaksud / Berniat / Berencana",
+    "contoh": [
+      {
+        "kalimat": "にほんにいこうとおもっています。",
+        "terjemahan": "Saya sedang berencana pergi ke Jepang."
+      }
+    ]
+  },
+  {
+    "pola": [
+      "Ｖ(bentuk biasa) ＋ そうです",
+      "ＫＳい ＋ そうです",
+      "ＫＳな ＋ だそうです",
+      "ＫＢ ＋ だそうです"
+    ],
+    "arti": "Katanya (informasi dari orang lain)",
+    "contoh": [
+      {
+        "kalimat": "チャチャさんはせんせいだそうです。",
+        "terjemahan": "Katanya, Sdri Chacha adalah seorang guru."
+      },
+      {
+        "kalimat": "にほんのまちはきれいだそうです。",
+        "terjemahan": "Katanya, kota di Jepang bersih."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖる ＋ ところです",
+    "arti": "Baru mau (melakukan)",
+    "contoh": [
+      {
+        "kalimat": "いまからしゃちょうさまはたべるところです。",
+        "terjemahan": "Mulai sekarang, Shachou baru saja mau makan."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖている ＋ ところです",
+    "arti": "Sedang berlangsung (pas banget)",
+    "contoh": [
+      {
+        "kalimat": "いま、しゃちょうさまはたべているところです。",
+        "terjemahan": "Sekarang, Shachou sedang makan."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖた ＋ ところです",
+    "arti": "Baru saja dilakukan",
+    "contoh": [
+      {
+        "kalimat": "たったいま、けんさんはいえにかえったところです。",
+        "terjemahan": "Baru saja, Sdr Ken pulang ke rumah."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖ(bentuk biasa) ＋ でしょう / だろう",
+    "arti": "Kemungkinan / Perkiraan",
+    "contoh": [
+      {
+        "kalimat": "ごごからあめがふるでしょう。",
+        "terjemahan": "Mulai siang ini, mungkin akan turun hujan."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖえば",
+    "arti": "Jika / Kalau (pengandaian logis)",
+    "contoh": [
+      {
+        "kalimat": "がんばれば、きっとできる。",
+        "terjemahan": "Kalau bersungguh-sungguh, pasti bisa."
+      }
+    ]
+  },
+  {
+    "pola": "Ｖ(bentuk biasa) ＋ なら",
+    "arti": "Kalau (pendapat pembicara / topik)",
+    "contoh": [
+      {
+        "kalimat": "ジャカルタにいくなら、べんりだそうです。",
+        "terjemahan": "Kalau pergi ke Jakarta, katanya praktis."
+      }
+    ]
+  },
+  {
+    "pola": [
+      "Ｖ(bentuk biasa) ＋ ので",
+      "ＫＳい ＋ ので",
+      "ＫＳな ＋ なので",
+      "ＫＢ ＋ なので"
+    ],
+    "arti": "Karena (lembut, sopan)",
+    "contoh": [
+      {
+        "kalimat": "じこなので、でんしゃがうごきませんでした。",
+        "terjemahan": "Karena kecelakaan, kereta apinya tidak berjalan."
+      },
+      {
+        "kalimat": "べんきょうしないので、にぶくなります。",
+        "terjemahan": "Karena tidak belajar, menjadi bodoh."
+      }
+    ]
+  },
+  {
+    "pola": ["Ｖ(bentuk biasa) ＋ など", "ＫＳ ＋ など", "ＫＢ ＋ など"],
+    "arti": "Dan lain-lain / Seperti",
+    "contoh": []
+  }
+]
